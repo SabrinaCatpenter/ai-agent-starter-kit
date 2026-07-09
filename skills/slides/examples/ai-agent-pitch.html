@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Study Agent — Pitch</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown data-separator="^\r?\n---\r?\n" data-separator-vertical="^\r?\n--\r?\n" data-separator-notes="^Note:">
+        <script type="text/template">
+## My Study Agent
+### A personal AI that turns lecture notes into revision
+
+Jordan Lee · AI Agent Workshop
+
+Note: This is the demo deck built from the slides skill. Press S for speaker view.
+
+---
+
+## The Problem
+- Students take notes but rarely revisit them
+- Turning a week of notes into revision is slow and boring
+- Generic AI tools don't know *your* course
+
+---
+
+## The Idea
+- A bespoke agent that lives beside your notes
+- Feed it a lecture → get a summary, flashcards, and a quiz
+- **One-line pitch:** your notes, revised for you, automatically
+
+---
+
+## How It Works
+1. Drop lecture notes into a folder
+2. The agent applies your *study* skill (summary + Q&A)
+3. Out come flashcards + a short practice quiz
+
+---
+
+## Why It's Different
+- Tuned to your subject and your style, not generic
+- Runs from a take-home starter kit you keep
+- Works inside Claude Code / Codex — no new app to learn
+
+---
+
+## Thank You
+Try it: open the kit → pick the `study` skill → point it at today's notes
+
+Note: End on the call to action. Press Esc for the overview.
+        </script>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      transition: 'slide',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>

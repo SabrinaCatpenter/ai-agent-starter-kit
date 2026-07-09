@@ -1,0 +1,71 @@
+% ============================================================
+% USA — ATS-optimised single-column resume (self-authored).
+% One page, no photo, no personal data, standard section names,
+% no tables for content (ATS parsers read plain single-column best).
+% Fill <PLACEHOLDERS> from your-profile.md using markets/usa/rules.md.
+% Compile: Prism / Overleaf / pdflatex.
+% ============================================================
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.5in,bottom=0.5in,left=0.7in,right=0.7in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+\setlength{\parindent}{0pt}
+\setstretch{1}
+\pagenumbering{gobble}
+\setlist[itemize]{leftmargin=1.4em, labelsep=0.5em, itemsep=1pt, topsep=1pt, before=\vspace{-2pt}}
+\renewcommand{\labelitemi}{\raisebox{0.25ex}{\normalsize$\bullet$}}
+
+\newcommand{\sectionrule}{\vspace{2pt}\hrule height 1pt\vspace{5pt}}
+\newcommand{\resumesection}[1]{{\large\textbf{\MakeUppercase{#1}}}\sectionrule}
+\newcommand{\jobtitle}[3]{\textbf{#1}\hfill \textit{#2}\\#3\\[2pt]}
+
+\begin{document}
+\vspace*{0pt}
+
+% Header — name + single contact line (city, state). No photo, no DOB.
+\begin{center}
+{\fontsize{20pt}{24pt}\selectfont\textbf{<FULL NAME>}}\\[6pt]
+<CITY, STATE> \;|\; <PHONE> \;|\; \href{mailto:<EMAIL>}{<EMAIL>} \;|\; \href{<LINKEDIN URL>}{<LINKEDIN LABEL>}
+\end{center}
+\vspace{4pt}
+\raggedright
+
+\resumesection{Summary}
+<2-3 line summary mirroring keywords from the target job description>
+
+\vspace{6pt}
+\resumesection{Experience}
+\jobtitle{<Role>}{<Dates>}{<Company, City, State>}
+\begin{itemize}
+  \item <Result-led bullet: action verb + what + quantified impact (%, \$, time)>
+\end{itemize}
+
+\vspace{6pt}
+\resumesection{Education}
+\jobtitle{<Degree>}{<Dates>}{<Institution>}
+\begin{itemize}
+  \item <GPA / honours / relevant coursework>
+\end{itemize}
+
+\vspace{6pt}
+\resumesection{Technical Skills}
+\begin{itemize}
+  \item <Category>: <comma-separated skills>
+\end{itemize}
+
+\vspace{6pt}
+\resumesection{Awards}
+\begin{itemize}
+  \item <Award, year>
+\end{itemize}
+
+\end{document}

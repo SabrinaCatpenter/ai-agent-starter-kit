@@ -1,0 +1,80 @@
+% ============================================================
+% CHINA — 中文简历模板 (self-authored, 模块式).
+% 视觉：顶部姓名 + 基本信息网格 + 右上照片；章节用主色色块标题
+% 而非西式细横线。单主色（深青蓝），正文黑色，一页。
+% MUST compile with XeLaTeX (ctex). Prism/Overleaf 选 XeLaTeX。
+% Fill <占位符> from your-profile.md using markets/china/rules.md.
+% ============================================================
+\documentclass[10pt]{article}
+\usepackage[UTF8, fontset=windows]{ctex}
+
+\usepackage[top=0.55in,bottom=0.55in,left=0.75in,right=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\definecolor{accent}{HTML}{215D6E}   % 深青蓝主色，可整体替换
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+\setlength{\parindent}{0pt}
+\setstretch{1.02}
+\pagenumbering{gobble}
+\setlist[itemize]{leftmargin=1.3em, labelsep=0.5em, itemsep=1.5pt, topsep=2pt, before=\vspace{-2pt}}
+\renewcommand{\labelitemi}{\textcolor{accent}{\footnotesize$\bullet$}}
+
+% 模块式章节标题：主色左色块 + 主色粗体 + 细底条
+\newcommand{\cnsection}[1]{%
+  \vspace{9pt}%
+  {\color{accent}\rule[-0.15ex]{3.5pt}{1.05em}}\hspace{7pt}{\large\bfseries\color{accent}#1}\\[1pt]%
+  {\color{accent!30}\rule{\textwidth}{0.9pt}}\\[3pt]%
+}
+% 条目：标题（黑体）+ 右侧时间（灰）
+\newcommand{\cnentry}[3]{\textbf{#1}\;\;{\small\color{gray}#3}\hfill{\small\itshape #2}\\[1pt]}
+
+\begin{document}
+\vspace*{0pt}
+
+% ---- 顶部：姓名 + 基本信息网格（左）｜ 照片（右）----
+\noindent
+\begin{minipage}[b]{0.72\textwidth}
+  {\fontsize{24pt}{28pt}\selectfont\bfseries\color{accent}<姓名>}\\[6pt]
+  \setlength{\tabcolsep}{0pt}\renewcommand{\arraystretch}{1.35}
+  \begin{tabularx}{\linewidth}{@{}p{0.52\linewidth}X@{}}
+    求职意向：<目标岗位> & 电话：<电话>\\
+    所在城市：<城市>     & 邮箱：\href{mailto:<邮箱>}{<邮箱>}\\
+    <学历/毕业年份>       & 主页：\href{<主页>}{<主页/LinkedIn>}\\
+  \end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.24\textwidth}\raggedleft
+  % 真实照片：\includegraphics[width=2.6cm]{photo.jpg}
+  \fbox{\parbox[c][3.3cm][c]{2.6cm}{\centering 一寸\\照片}}
+\end{minipage}
+
+\cnsection{个人简介}
+<两三句：你是谁 + 核心优势 + 求职方向>
+
+\cnsection{工作经历}
+\cnentry{<公司>}{<起止时间>}{<职位>}
+\begin{itemize}
+  \item <动词 + 做了什么 + 可量化结果（%、规模、增长）>
+\end{itemize}
+
+\cnsection{教育背景}
+\cnentry{<院校>}{<起止时间>}{<学位 · 专业>}
+\begin{itemize}
+  \item <GPA / 荣誉 / 毕业设计 / 相关课程>
+\end{itemize}
+
+\cnsection{专业技能}
+\begin{itemize}
+  \item <类别>：<技能列表>
+\end{itemize}
+
+\cnsection{荣誉奖项}
+\begin{itemize}
+  \item <奖项，年份>
+\end{itemize}
+
+\end{document}

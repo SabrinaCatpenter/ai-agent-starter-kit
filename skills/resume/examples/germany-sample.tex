@@ -1,0 +1,100 @@
+% ============================================================
+% DEMO — same facts as australia-sample.tex, re-targeted to the
+% GERMANY market using markets/germany/template.tex (proper
+% tabellarischer Lebenslauf: aligned date | content table).
+% Fictional persona (Jordan Lee).
+% ============================================================
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[top=0.6in,bottom=0.6in,left=0.9in,right=0.9in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+\setlength{\parindent}{0pt}
+\setstretch{1}
+\pagenumbering{gobble}
+\setlist[itemize]{leftmargin=1.3em, labelsep=0.5em, itemsep=1pt, topsep=1pt, before=\vspace{-3pt}, after=\vspace{-2pt}}
+\renewcommand{\labelitemi}{\raisebox{0.2ex}{\footnotesize$\bullet$}}
+
+\newlength{\datecol}\setlength{\datecol}{3.4cm}
+\newcommand{\llsection}[1]{\vspace{6pt}{\large\textbf{#1}}\vspace{1pt}\hrule height 1pt\vspace{5pt}}
+\newcommand{\llentry}[2]{%
+  \noindent\begin{tabularx}{\textwidth}{@{}p{\datecol}X@{}}
+    \textit{#1} & #2
+  \end{tabularx}\vspace{5pt}
+}
+
+\begin{document}
+\vspace*{0pt}
+
+\noindent\begin{tabularx}{\textwidth}{@{}X r@{}}
+\begin{minipage}[t]{0.72\textwidth}\vspace{0pt}
+  {\fontsize{22pt}{26pt}\selectfont\textbf{Lebenslauf}}\\[10pt]
+  {\large\textbf{Jordan Lee}}\\[4pt]
+  Musterstra\ss e 12, 10115 Berlin\\
+  0400 000 000 \;|\; \href{mailto:jordan.lee@example.com}{jordan.lee@example.com}\\
+  \href{https://www.linkedin.com/in/example}{linkedin.com/in/example}\\[2pt]
+  \textit{Geburtsdatum/-ort: optional --- bei Bedarf erg\"anzen}
+\end{minipage}
+&
+\begin{minipage}[t]{0.24\textwidth}\vspace{0pt}
+  \fbox{\parbox[c][3.4cm][c]{\linewidth}{\centering Bewerbungs-\\foto}}
+\end{minipage}
+\end{tabularx}
+
+\vspace{8pt}
+\llsection{Berufserfahrung}
+\llentry{Feb 2023 -- heute}{\textbf{Data Scientist}, Example Analytics, Melbourne
+  \begin{itemize}
+    \item Aufbau einer Anomalieerkennungs-Pipeline (statistische + ML-Methoden); Reduktion der Fehlererkennungszeit um über 80\,\%
+    \item Deployment und Monitoring von Klassifikations- und Zeitreihenmodellen auf Live-Betriebsdaten
+    \item Automatisierung von Datenvalidierung und Feature-Extraktion aus Streaming-Sensordaten
+  \end{itemize}}
+\llentry{Nov 2021 -- Feb 2023}{\textbf{Machine Learning Intern}, Sample Tech, Remote
+  \begin{itemize}
+    \item Prototyp eines Retrieval-Systems für technische Dokumente; verbesserte Antwortgenauigkeit in internen Tests
+    \item Entwicklung von Evaluations-Tools zur Verfolgung der Modellleistung über Releases hinweg
+  \end{itemize}}
+
+\llsection{Ausbildung}
+\llentry{2021 -- 2022}{\textbf{Master of Data Science}, Example University
+  \begin{itemize}
+    \item Abschlussprojekt: Anomalieerkennung für Energiesysteme (statistische Modellierung + ML)
+    \item Relevante Kurse: Statistical Machine Learning, Advanced Databases, Cloud Computing
+  \end{itemize}}
+
+\llsection{Kenntnisse \& F\"ahigkeiten}
+\llentry{}{\begin{itemize}
+    \item Programmierung \& Daten: Python, SQL, R; Pandas, NumPy
+    \item ML \& KI: Scikit-learn, PyTorch; Transformers, LangChain, OpenAI API
+    \item Cloud \& Deployment: Azure, GCP, Docker, Git, GitHub Actions
+  \end{itemize}}
+
+\llsection{Sprachen}
+\llentry{}{\begin{itemize}
+    \item Englisch --- Muttersprache (C2)
+    \item Deutsch --- B1
+  \end{itemize}}
+
+\llsection{Auszeichnungen}
+\llentry{}{\begin{itemize}
+    \item Erster Preis, Example AI Hackathon 2025
+    \item Dean's List, Example University
+  \end{itemize}}
+
+\vspace{16pt}
+Berlin, den \today\\[22pt]
+\rule{5cm}{0.4pt}\\
+Jordan Lee
+
+\end{document}

@@ -1,0 +1,92 @@
+% ============================================================
+% PRISM RESUME ENGINE  (reverse-engineered base template)
+% ------------------------------------------------------------
+% This file is the PRESENTATION ENGINE only: fonts, spacing,
+% section rules, and the \resumesection / \expjobtitle / \jobtitle
+% macros. It carries NO personal content.
+%
+% The agent (Claude Code / Codex) fills the body between
+% \begin{document} and \end{document} using:
+%   - your-profile.md      (the student's raw experience)
+%   - markets/<country>.md (the rules for the target market)
+%
+% Compile path for students: paste the finished .tex into
+% Overleaf (https://www.overleaf.com) -> Recompile -> download PDF.
+% No local LaTeX install required.
+% ============================================================
+
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.5in,bottom=0.5in,left=0.8in,right=0.8in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{graphicx}   % enable for markets that use a photo (CN / DE)
+
+% Slightly heavier-looking sans font
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1}
+\pagenumbering{gobble}
+
+% Compact lists
+\setlist[itemize]{leftmargin=1.5em, labelsep=0.6em, itemsep=1pt, topsep=0pt, before=\vspace{-2pt}}
+\renewcommand{\labelitemi}{\raisebox{0.25ex}{\normalsize$\bullet$}}
+
+% Simple heading helpers
+\newcommand{\sectionrule}{\vspace{2pt}\hrule height 1.2pt\vspace{6pt}}
+\newcommand{\resumesection}[1]{%
+  {\large\textbf{\MakeUppercase{#1}}}\sectionrule
+}
+% \jobtitle{Role}{Dates}{Organisation, Location}
+\newcommand{\jobtitle}[3]{%
+  \textbf{#1}\hfill \textit{#2}\\%
+  #3\\[2pt]
+}
+% Extra vertical space before each experience entry
+\newcommand{\expjobtitle}[3]{%
+  \vspace{0pt}
+  \jobtitle{#1}{#2}{#3}%
+}
+
+\begin{document}
+
+\vspace*{0pt}
+
+% ---- HEADER -------------------------------------------------
+% AU/US: name + contact line, NO photo.
+% CN/DE: optional photo top-right (see market file) via
+%   \begin{minipage}{...}\includegraphics[...]{photo}\end{minipage}
+\begin{center}
+{\fontsize{22pt}{26pt}\selectfont\textbf{<FULL NAME>}}\\[8pt]
+<PHONE> \;|\; \href{mailto:<EMAIL>}{<EMAIL>} \;|\; \href{<LINKEDIN URL>}{<LINKEDIN LABEL>}
+\end{center}
+
+\vspace{6pt}
+
+\raggedright
+
+% ---- SECTIONS ----------------------------------------------
+% Fill using \resumesection{...} then \expjobtitle{...}{...}{...}
+% and \begin{itemize} achievement bullets. Section ORDER and
+% INCLUSION are decided by the selected market file.
+
+\resumesection{<SECTION NAME>}
+% \expjobtitle{Role}{Dates}{Organisation, Location}
+% \begin{itemize}
+%   \item Achievement-oriented bullet (verb + what + measurable result)
+% \end{itemize}
+
+\end{document}

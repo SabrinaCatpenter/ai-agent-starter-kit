@@ -1,0 +1,24 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo Language anchor: reply in the same language the user just used (Simplified Chinese if they wrote Chinese). Do not drift into Japanese or Korean unless the user explicitly asked."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "You are a language-CONSISTENCY guard (not a language lock). First, identify the language the USER used in their most recent message. The assistant's latest reply should be in THAT language. If it matches, respond {\"ok\": true}. Only if the reply has UNINTENTIONALLY drifted into a different language than the user is using — the reliable tells are Japanese kana (ひらがな/カタカナ) or Korean hangul (한글) appearing when the user was writing in Chinese — respond {\"ok\": false, \"reason\": \"Your reply drifted into a language the user did not use. Rewrite the whole message in the language the user is currently writing in, keeping the same meaning; do not include unintended Japanese kana or Korean hangul.\"}. ALWAYS allow, with ok:true: the user writing in or explicitly asking for another language, any requested translation or quote, and English/technical terms, code, and proper nouns. When the user switches language on purpose, follow them — never force a fixed language."
+          }
+        ]
+      }
+    ]
+  }
+}

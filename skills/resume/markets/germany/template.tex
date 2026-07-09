@@ -1,0 +1,87 @@
+% ============================================================
+% GERMANY — Tabellarischer Lebenslauf template (self-authored,
+% license-clean). Full-width two-column table: dates | content,
+% with the date column globally aligned across every section.
+%
+% The agent fills the <PLACEHOLDERS> from your-profile.md using
+% markets/germany/rules.md. Compile with Prism / Overleaf / pdflatex.
+% Photo is a placeholder box so it compiles without an image file.
+% ============================================================
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[top=0.6in,bottom=0.6in,left=0.9in,right=0.9in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+\setlength{\parindent}{0pt}
+\setstretch{1}
+\pagenumbering{gobble}
+\setlist[itemize]{leftmargin=1.3em, labelsep=0.5em, itemsep=1pt, topsep=1pt, before=\vspace{-3pt}, after=\vspace{-2pt}}
+\renewcommand{\labelitemi}{\raisebox{0.2ex}{\footnotesize$\bullet$}}
+
+% Fixed date-column width — shared by every entry so all dates align.
+\newlength{\datecol}\setlength{\datecol}{3.4cm}
+
+\newcommand{\llsection}[1]{\vspace{6pt}{\large\textbf{#1}}\vspace{1pt}\hrule height 1pt\vspace{5pt}}
+
+% \llentry{dates}{ content (title, org, bullets) }
+\newcommand{\llentry}[2]{%
+  \noindent\begin{tabularx}{\textwidth}{@{}p{\datecol}X@{}}
+    \textit{#1} & #2
+  \end{tabularx}\vspace{5pt}
+}
+
+\begin{document}
+\vspace*{0pt}
+
+% ---- Kopf: Persönliche Daten (links) + Foto (rechts) ----
+\noindent\begin{tabularx}{\textwidth}{@{}X r@{}}
+\begin{minipage}[t]{0.72\textwidth}\vspace{0pt}
+  {\fontsize{22pt}{26pt}\selectfont\textbf{Lebenslauf}}\\[10pt]
+  {\large\textbf{<VORNAME NACHNAME>}}\\[4pt]
+  <STRASSE HAUSNR>, <PLZ ORT>\\
+  <TELEFON> \;|\; \href{mailto:<EMAIL>}{<EMAIL>}\\
+  \href{<LINKEDIN URL>}{<LINKEDIN LABEL>}\\[2pt]
+  \textit{Geburtsdatum/-ort: optional --- bei Bedarf ergänzen}
+\end{minipage}
+&
+\begin{minipage}[t]{0.24\textwidth}\vspace{0pt}
+  % Echtes Foto: \includegraphics[width=\linewidth]{foto.jpg}
+  \fbox{\parbox[c][3.4cm][c]{\linewidth}{\centering Bewerbungs-\\foto}}
+\end{minipage}
+\end{tabularx}
+
+\vspace{8pt}
+\llsection{Berufserfahrung}
+\llentry{<Zeitraum>}{\textbf{<Position>}, <Firma>, <Ort>
+  \begin{itemize}\item <Aufgabe / Ergebnis>\end{itemize}}
+
+\llsection{Ausbildung}
+\llentry{<Zeitraum>}{\textbf{<Abschluss>}, <Institution>
+  \begin{itemize}\item <Schwerpunkt / Note>\end{itemize}}
+
+\llsection{Kenntnisse \& F\"ahigkeiten}
+\llentry{}{\begin{itemize}\item <Kategorie>: <...>\end{itemize}}
+
+\llsection{Sprachen}
+\llentry{}{\begin{itemize}\item <Sprache> --- <Niveau CEFR>\end{itemize}}
+
+\llsection{Auszeichnungen}
+\llentry{}{\begin{itemize}\item <Auszeichnung>\end{itemize}}
+
+\vspace{16pt}
+<ORT>, den \today\\[22pt]
+\rule{5cm}{0.4pt}\\
+<VORNAME NACHNAME>
+
+\end{document}

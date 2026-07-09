@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan Lee — AI builder & educator</title>
+<meta name="description" content="Jordan Lee builds bespoke AI agents and teaches people to make their own. Portfolio, projects, and contact.">
+<!-- Open Graph / share cards -->
+<meta property="og:title" content="Jordan Lee — AI builder & educator">
+<meta property="og:description" content="Bespoke AI agents, and teaching people to build their own.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦊</text></svg>">
+<!-- Font: Inter — SIL Open Font License 1.1 (free for commercial use) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --surface:#f5f7f8; --text:#141a1c; --muted:#5a6b70;
+    --accent:#1c6b7d; --accent-ink:#ffffff; --border:#e2e8ea;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1416; --surface:#171e21; --text:#eef3f4; --muted:#9fb0b5;
+    --accent:#4bb6cc; --accent-ink:#06232b; --border:#263136;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1416; --surface:#171e21; --text:#eef3f4; --muted:#9fb0b5;
+      --accent:#4bb6cc; --accent-ink:#06232b; --border:#263136;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--accent)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:5}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+  nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:500}
+  nav a:hover{color:var(--text)}
+  .toggle{margin-left:18px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:20px;padding:5px 12px;cursor:pointer;font:inherit;font-size:.85rem}
+  .hero{padding:88px 0 56px}
+  .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px;font-weight:800}
+  .hero p{font-size:1.2rem;color:var(--muted);max-width:34ch;margin:0 0 28px}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;padding:12px 22px;border-radius:10px}
+  .btn:hover{filter:brightness(1.06)}
+  section{padding:44px 0;border-top:1px solid var(--border)}
+  h2{font-size:1.5rem;letter-spacing:-.02em;margin:0 0 18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 6px;font-size:1.1rem}
+  .card p{margin:0;color:var(--muted)}
+  .about{color:var(--muted);max-width:60ch;font-size:1.08rem}
+  footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:.9rem}
+  footer a{color:var(--muted)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="brand">Jordan&nbsp;Lee</span>
+    <nav aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle" id="themeBtn" aria-label="Toggle light or dark theme">◐ Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="border-top:none">
+    <div class="wrap">
+      <h1>I build bespoke AI agents — and teach people to build their own.</h1>
+      <p>Data scientist and educator turning everyday workflows into personal AI tools.</p>
+      <a class="btn" href="#contact">Get in touch →</a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <div class="grid">
+        <article class="card"><h3>Study Agent</h3><p>Turns lecture notes into summaries, flashcards, and quizzes.</p></article>
+        <article class="card"><h3>Anomaly Pipeline</h3><p>Cut fault-detection time 80%+ for energy systems.</p></article>
+        <article class="card"><h3>Agent Starter Kit</h3><p>A take-home kit for building your own AI workflow.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p class="about">I work at the intersection of applied machine learning and education —
+      building practical AI systems, then helping students and early-career professionals
+      make their own. Previously data science and AI education roles across Australia.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="about">Building something, hiring, or want to collaborate? I'd love to hear from you.</p>
+      <p><a class="btn" href="mailto:jordan.lee@example.com">Email me →</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Jordan Lee ·
+    <a href="https://www.linkedin.com/in/example">LinkedIn</a> ·
+    <a href="https://github.com/example">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle (respects system default until the user chooses)
+  const root=document.documentElement, btn=document.getElementById('themeBtn');
+  btn.addEventListener('click',()=>{
+    const dark = getComputedStyle(root).getPropertyValue('--bg').trim().startsWith('#0');
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

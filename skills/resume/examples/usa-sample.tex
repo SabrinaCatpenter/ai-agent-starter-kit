@@ -1,0 +1,79 @@
+% ============================================================
+% DEMO — same facts as australia-sample.tex, re-targeted to the
+% USA market using markets/usa/template.tex (ATS single-column).
+% Fictional persona (Jordan Lee).
+% ============================================================
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.5in,bottom=0.5in,left=0.7in,right=0.7in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+\setlength{\parindent}{0pt}
+\setstretch{1}
+\pagenumbering{gobble}
+\setlist[itemize]{leftmargin=1.4em, labelsep=0.5em, itemsep=1pt, topsep=1pt, before=\vspace{-2pt}}
+\renewcommand{\labelitemi}{\raisebox{0.25ex}{\normalsize$\bullet$}}
+
+\newcommand{\sectionrule}{\vspace{2pt}\hrule height 1pt\vspace{5pt}}
+\newcommand{\resumesection}[1]{{\large\textbf{\MakeUppercase{#1}}}\sectionrule}
+\newcommand{\jobtitle}[3]{\textbf{#1}\hfill \textit{#2}\\#3\\[2pt]}
+
+\begin{document}
+\vspace*{0pt}
+
+\begin{center}
+{\fontsize{20pt}{24pt}\selectfont\textbf{Jordan Lee}}\\[6pt]
+San Francisco, CA \;|\; (415) 000-0000 \;|\; \href{mailto:jordan.lee@example.com}{jordan.lee@example.com} \;|\; \href{https://www.linkedin.com/in/example}{linkedin.com/in/example}
+\end{center}
+\vspace{4pt}
+\raggedright
+
+\resumesection{Summary}
+Data scientist with experience building and deploying applied machine learning systems, from data pipelines to model evaluation, and translating results for non-technical stakeholders.
+
+\vspace{6pt}
+\resumesection{Experience}
+\jobtitle{Data Scientist}{Feb 2023 - Present}{Example Analytics, San Francisco, CA}
+\begin{itemize}
+  \item Cut fault-detection time by over 80\% by building an anomaly-detection pipeline combining statistical and ML methods
+  \item Deployed and monitored classification and time-series models on live operational data
+  \item Automated data validation and feature extraction from streaming sensor sources
+\end{itemize}
+
+\jobtitle{Machine Learning Intern}{Nov 2021 - Feb 2023}{Sample Tech, Remote}
+\begin{itemize}
+  \item Improved answer accuracy in internal tests by prototyping a retrieval system over technical documents
+  \item Built evaluation tooling to track model performance across releases
+\end{itemize}
+
+\vspace{6pt}
+\resumesection{Education}
+\jobtitle{Master of Data Science}{2021 - 2022}{Example University}
+\begin{itemize}
+  \item Capstone on anomaly detection for energy systems; coursework in Statistical Machine Learning, Advanced Databases, Cloud Computing
+\end{itemize}
+
+\vspace{6pt}
+\resumesection{Technical Skills}
+\begin{itemize}
+  \item Programming \& Data: Python, SQL, R, Pandas, NumPy
+  \item ML \& AI: Scikit-learn, PyTorch, Transformers, LangChain, OpenAI API
+  \item Cloud \& Deployment: Azure, GCP, Docker, Git, GitHub Actions
+\end{itemize}
+
+\vspace{6pt}
+\resumesection{Awards}
+\begin{itemize}
+  \item First Prize, Example AI Hackathon 2025
+  \item Dean's List, Example University
+\end{itemize}
+
+\end{document}

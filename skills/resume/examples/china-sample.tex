@@ -1,0 +1,85 @@
+% ============================================================
+% DEMO — 中国市场，模块式中文简历（基本信息网格 + 色块标题）。
+% 与 australia-sample 同一批事实。虚构人物 李乔丹 / Jordan Lee。
+% COMPILE WITH XeLaTeX.
+% ============================================================
+\documentclass[10pt]{article}
+\usepackage[UTF8, fontset=windows]{ctex}
+
+\usepackage[top=0.55in,bottom=0.55in,left=0.75in,right=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\definecolor{accent}{HTML}{215D6E}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+\setlength{\parindent}{0pt}
+\setstretch{1.02}
+\pagenumbering{gobble}
+\setlist[itemize]{leftmargin=1.3em, labelsep=0.5em, itemsep=1.5pt, topsep=2pt, before=\vspace{-2pt}}
+\renewcommand{\labelitemi}{\textcolor{accent}{\footnotesize$\bullet$}}
+
+\newcommand{\cnsection}[1]{%
+  \vspace{9pt}%
+  {\color{accent}\rule[-0.15ex]{3.5pt}{1.05em}}\hspace{7pt}{\large\bfseries\color{accent}#1}\\[1pt]%
+  {\color{accent!30}\rule{\textwidth}{0.9pt}}\\[3pt]%
+}
+\newcommand{\cnentry}[3]{\textbf{#1}\;\;{\small\color{gray}#3}\hfill{\small\itshape #2}\\[1pt]}
+
+\begin{document}
+\vspace*{0pt}
+
+\noindent
+\begin{minipage}[b]{0.72\textwidth}
+  {\fontsize{24pt}{28pt}\selectfont\bfseries\color{accent}李乔丹}\;\;{\normalsize\color{gray}（Jordan Lee）}\\[6pt]
+  \setlength{\tabcolsep}{0pt}\renewcommand{\arraystretch}{1.35}
+  \begin{tabularx}{\linewidth}{@{}p{0.52\linewidth}X@{}}
+    求职意向：数据科学家 / 机器学习工程师 & 电话：151 0000 0000\\
+    所在城市：上海                        & 邮箱：\href{mailto:jordan.lee@example.com}{jordan.lee@example.com}\\
+    数据科学硕士 · 2022 届                 & 主页：\href{https://www.linkedin.com/in/example}{linkedin.com/in/example}\\
+  \end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.24\textwidth}\raggedleft
+  \fbox{\parbox[c][3.3cm][c]{2.6cm}{\centering 一寸\\照片}}
+\end{minipage}
+
+\cnsection{个人简介}
+数据科学从业者，具备应用型机器学习系统的落地经验，覆盖数据管道、模型评估到面向非技术团队的结果沟通，寻求数据科学 / 机器学习方向岗位。
+
+\cnsection{工作经历}
+\cnentry{Example Analytics（墨尔本）}{2023.02 - 至今}{数据科学家}
+\begin{itemize}
+  \item 搭建结合统计方法与机器学习的异常检测管道，将故障检测时间缩短 80\% 以上
+  \item 在实时业务数据上部署并监控分类与时间序列模型
+  \item 实现流式传感器数据的自动化校验与特征提取
+\end{itemize}
+\cnentry{Sample Tech（远程）}{2021.11 - 2023.02}{机器学习实习生}
+\begin{itemize}
+  \item 针对技术文档搭建检索系统原型，在内部测试中提升回答准确率
+  \item 开发评估工具，持续追踪多个版本间的模型表现
+\end{itemize}
+
+\cnsection{教育背景}
+\cnentry{Example University}{2021 - 2022}{数据科学硕士}
+\begin{itemize}
+  \item 毕业项目：面向能源系统的异常检测（统计建模 + 机器学习）
+  \item 相关课程：统计机器学习、高级数据库、云计算
+\end{itemize}
+
+\cnsection{专业技能}
+\begin{itemize}
+  \item 编程与数据：Python、SQL、R；Pandas、NumPy
+  \item 机器学习与 AI：Scikit-learn、PyTorch；Transformers、LangChain、OpenAI API
+  \item 云与部署：Azure、GCP、Docker、Git、GitHub Actions
+\end{itemize}
+
+\cnsection{荣誉奖项}
+\begin{itemize}
+  \item Example AI 黑客松 2025 一等奖
+  \item Example University 院长嘉许名单（Dean's List）
+\end{itemize}
+
+\end{document}

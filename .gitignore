@@ -1,0 +1,17 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+# Node / Remotion
+node_modules/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local model / heavy outputs (never commit)
+*.wav
+*.mp4
